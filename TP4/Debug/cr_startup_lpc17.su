@@ -1,0 +1,11 @@
+cr_startup_lpc17.c:290:6:NMI_Handler	0	static
+cr_startup_lpc17.c:297:6:HardFault_Handler	0	static
+cr_startup_lpc17.c:304:6:MemManage_Handler	0	static
+cr_startup_lpc17.c:311:6:BusFault_Handler	0	static
+cr_startup_lpc17.c:318:6:UsageFault_Handler	0	static
+cr_startup_lpc17.c:332:6:DebugMon_Handler	0	static
+cr_startup_lpc17.c:360:6:IntDefaultHandler	0	static
+cr_startup_lpc17.c:231:1:ResetISR	8	static
+cr_startup_lpc17.c:325:6:SVCall_Handler	0	static
+cr_startup_lpc17.c:339:6:PendSV_Handler	0	static
+cr_startup_lpc17.c:346:6:SysTick_Handler	0	static

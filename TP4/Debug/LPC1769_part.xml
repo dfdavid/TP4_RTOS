@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infoList vendor="NXP">
+<info name="LPC1769" chip="LPC1769" flash_driver="LPC175x_6x_512.cfx" match_id="0x26113F37"  package="lpc17_lqfp100.xml" stub="crt_emu_cm3_nxp">
+<chip>
+<name>LPC1769</name>
+<family>LPC17xx</family>
+<vendor>NXP (formerly Philips)</vendor>
+<reset board="None" core="Real" sys="Real"/>
+<clock changeable="TRUE" freq="20MHz" is_accurate="TRUE"/>
+<memory can_program="true" id="Flash" is_ro="true" type="Flash"/>
+<memory id="RAM" type="RAM"/>
+<memory id="Periph" is_volatile="true" type="Peripheral"/>
+<memoryInstance derived_from="Flash" id="MFlash512" location="0x0" size="0x80000"/>
+<memoryInstance derived_from="RAM" id="RamLoc32" location="0x10000000" size="0x8000"/>
+<memoryInstance derived_from="RAM" id="RamAHB32" location="0x2007c000" size="0x8000"/>
+<prog_flash blocksz="0x1000" location="0" maxprgbuff="0x1000" progwithcode="TRUE" size="0x10000"/>
+<prog_flash blocksz="0x8000" location="0x10000" maxprgbuff="0x1000" progwithcode="TRUE" size="0x70000"/>
+</chip>
+<processor>
+<name gcc_name="cortex-m3">Cortex-M3</name>
+<family>Cortex-M</family>
+</processor>
+</info>
+</infoList>
+

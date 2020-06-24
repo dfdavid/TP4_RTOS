@@ -1,0 +1,2 @@
+basic_io.c:41:6:vPrintString	16	static
+basic_io.c:54:6:vPrintStringAndNumber	16	static

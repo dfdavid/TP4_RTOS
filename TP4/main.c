@@ -42,6 +42,10 @@
 
 #define uxTAM_COLA 19 //20 elementos
 #define uxTAM_ELEM 4 //el tamanio se expresa en bytes, o sea 4 bytes
+#define RETRASO_UART 5 //para demo setear en 11000   //demora arbitraria, uk es un contador que se incrementa hasta RETRASO_UART produciendo un overhead intencional
+#define RETRASO_SENSOR 5 //para demo setear en 165000  //demora arbitraria, ul es un contador que se incrementa hasta RETRASO_SENSOR produciendo un overhead intencional
+#define RETRASO_TECLADO 5 //para demo setear en 15000  //demora arbitraria, ul es un contador que se incrementa hasta RETRASO_TECLADO produciendo un overhead intencional
+
 
 /* The task functions. */
 void vTask_lectura_sensor( void *pvParameters );
@@ -107,7 +111,7 @@ int main( void )
 void vTask_lectura_sensor( void *pvParameters )
 {
 volatile unsigned short int usSensorValue ; // dato simulado
-volatile char *pcOutput = (char *) pvPortMalloc(5+1+1+2*sizeof(char));//convertir dato a string
+volatile char *salidaConsola = (char *) pvPortMalloc(5+1+1+2*sizeof(char));//convertir dato a string
 volatile unsigned long ul; // simular tiempo de adquisicon de dato
 //xQueueHandle cola_de_datos = (xQueueHandle) (*pvParameters);
 volatile char *cpElem;
@@ -122,8 +126,8 @@ xLastWakeTime = xTaskGetTickCount();
 	{
 		usSensorValue = (unsigned short int) (rand() & 0x000000ff);
 		/* Print out the name of this task. */
-		sprintf(pcOutput, "[%03u %s]\n", usSensorValue, "deg.C"); //%05u indica que se imprimen 5 digitos de u
- 		cpElem = pcOutput;
+		sprintf(salidaConsola, "[%03u %s]\n", usSensorValue, "deg.C"); //%05u indica que se imprimen 5 digitos de u
+ 		cpElem = salidaConsola;
 
  		for(ul = 0; ul < 165000; ul++){
  		}
@@ -147,7 +151,7 @@ void vTask_entrada_teclado( void *pvParameters )
 	unsigned short int usRdelay = 0;
 	unsigned short int usNcharacter = 0;
 	//15 caracteres + fin de linea + fin de string
-	char *pcOutput = (char *) pvPortMalloc(15+1+1*sizeof(char));//convertir dato a string
+	char *salidaConsola = (char *) pvPortMalloc(15+1+1*sizeof(char));//convertir dato a string
 	char * cElem;
 	volatile unsigned long ul; // simular tiempo de adquisicon de dato
 	volatile unsigned long uk;
@@ -160,7 +164,7 @@ void vTask_entrada_teclado( void *pvParameters )
 			for (ul = 0; ul < usNcharacter ; ul++)
 			{
 
-				*(pcOutput + ul) = (char) ('A' + (rand() % 25));
+				*(salidaConsola + ul) = (char) ('a' + (rand() % 25));
 
 				//delay intencional para propositos de analisis
 				for(uk = 0; uk < 15000; uk++){
@@ -169,16 +173,16 @@ void vTask_entrada_teclado( void *pvParameters )
 
 
 
-			*(pcOutput + usNcharacter) = '\n';
+			*(salidaConsola + usNcharacter) = '\n';
 			/* Print out the name of this task. */
-			//sprintf(pcOutput, "%u\n", usSensorValue);
-			cElem = pcOutput;
+			//sprintf(salidaConsola, "%u\n", usSensorValue);
+			cElem = salidaConsola;
 			for(ul = 0; ul < usNcharacter+1; ul++)
 			{
 				xQueueSend(cola_de_datos, cElem++, portMAX_DELAY);
 			}
 			//xQueueSend(cola_de_datos, &asd, portMAX_DELAY);
-			//vPrintString(pcOutput);
+			//vPrintString(salidaConsola);
 			usRdelay = (unsigned short int) (rand() & 0x000000ff);
 			vTaskDelay( usRdelay / portTICK_RATE_MS);
 		}
@@ -199,7 +203,7 @@ void vTask_envio_de_dato( void *pvParameters )
 		data[1] = '\0';
 		vPrintString(data);
 
-		for(unsigned long uk = 0; uk < 11000; uk++){
+		for(unsigned long uk = 0; uk < RETRASO_UART; uk++){
 		}
 	}
 

@@ -40,7 +40,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-#define uxTAM_COLA 20 //20 elementos
+#define uxTAM_COLA 19 //20 elementos
 #define uxTAM_ELEM 4 //el tamanio se expresa en bytes, o sea 4 bytes
 
 /* The task functions. */
@@ -86,12 +86,12 @@ int main( void )
 
 
 	//TRANSMISOR
-	xTaskCreate( 	vTask_envio_de_dato,
-				 	"TX",
-					240,
-					NULL,
-					1,
-					NULL );
+	xTaskCreate( 	vTask_envio_de_dato, // puntero a la tarea
+				 	"TX", // nombre descriptivo opcional
+					240, // tamaño del stack de la tarea en palabras (1 palabra = 32bits = 4bytes )
+					NULL, // puntero a  void, opcional para recibir parametros en la tarea
+					1, // prioridad de la tarea
+					NULL ); //identificador de la tarea utilizado para ser eliminada o para cambiar su priorirdad.
 
 	/* Start the scheduler so our tasks start executing. */
 	vTaskStartScheduler();

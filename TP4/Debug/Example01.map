@@ -1184,7 +1184,7 @@ END GROUP
                 0x0000000020084000                __top_RamAHB32 = 0x20084000
                 0x0000000020084000                __top_RAM2 = 0x20084000
 
-.text           0x0000000000000000     0xb4a0
+.text           0x0000000000000000     0xb480
  FILL mask 0xff
                 0x0000000000000000                __vectors_start__ = ABSOLUTE (.)
  *(.isr_vector)
@@ -1193,10 +1193,10 @@ END GROUP
                 0x00000000000000cc                . = ALIGN (0x4)
                 0x00000000000000cc                __section_table_start = .
                 0x00000000000000cc                __data_section_table = .
-                0x00000000000000cc        0x4 LONG 0xb4a8 LOADADDR (.data)
+                0x00000000000000cc        0x4 LONG 0xb488 LOADADDR (.data)
                 0x00000000000000d0        0x4 LONG 0x10000000 ADDR (.data)
                 0x00000000000000d4        0x4 LONG 0x9c4 SIZEOF (.data)
-                0x00000000000000d8        0x4 LONG 0xb4a8 LOADADDR (.data_RAM2)
+                0x00000000000000d8        0x4 LONG 0xb488 LOADADDR (.data_RAM2)
                 0x00000000000000dc        0x4 LONG 0x2007c000 ADDR (.data_RAM2)
                 0x00000000000000e0        0x4 LONG 0x0 SIZEOF (.data_RAM2)
                 0x00000000000000e4                __data_section_table_end = .
@@ -1270,437 +1270,436 @@ END GROUP
                 0x0000000000000104       0x58 ./cr_startup_lpc17.o
                 0x0000000000000104                ResetISR
  .text.vTask_lectura_sensor
-                0x000000000000015c       0x98 ./main.o
+                0x000000000000015c       0x90 ./main.o
                 0x000000000000015c                vTask_lectura_sensor
  .text.vTask_entrada_teclado
-                0x00000000000001f4       0xc8 ./main.o
-                0x00000000000001f4                vTask_entrada_teclado
+                0x00000000000001ec       0xb8 ./main.o
+                0x00000000000001ec                vTask_entrada_teclado
  .text.vTask_envio_de_dato
-                0x00000000000002bc       0x2c ./main.o
-                0x00000000000002bc                vTask_envio_de_dato
- .text.main     0x00000000000002e8       0x74 ./main.o
-                0x00000000000002e8                main
+                0x00000000000002a4       0x2c ./main.o
+                0x00000000000002a4                vTask_envio_de_dato
+ .text.main     0x00000000000002d0       0x74 ./main.o
+                0x00000000000002d0                main
  .text.vApplicationMallocFailedHook
-                0x000000000000035c        0x2 ./main.o
-                0x000000000000035c                vApplicationMallocFailedHook
+                0x0000000000000344        0x2 ./main.o
+                0x0000000000000344                vApplicationMallocFailedHook
  .text.vApplicationStackOverflowHook
-                0x000000000000035e        0x2 ./main.o
-                0x000000000000035e                vApplicationStackOverflowHook
+                0x0000000000000346        0x2 ./main.o
+                0x0000000000000346                vApplicationStackOverflowHook
  .text.vApplicationIdleHook
-                0x0000000000000360        0x2 ./main.o
-                0x0000000000000360                vApplicationIdleHook
+                0x0000000000000348        0x2 ./main.o
+                0x0000000000000348                vApplicationIdleHook
  .text.vApplicationTickHook
-                0x0000000000000362        0x2 ./main.o
-                0x0000000000000362                vApplicationTickHook
+                0x000000000000034a        0x2 ./main.o
+                0x000000000000034a                vApplicationTickHook
  .text.SystemInit
-                0x0000000000000364      0x140 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/CMSISv1p30_LPC17xx/Debug/libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
-                0x0000000000000364                SystemInit
- .text          0x00000000000004a4      0x134 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(heap_2.o)
-                0x00000000000004a4                pvPortMalloc
-                0x000000000000057c                vPortFree
-                0x00000000000005c8                xPortGetFreeHeapSize
-                0x00000000000005d4                vPortInitialiseBlocks
- *fill*         0x00000000000005d8        0x8 ff
- .text          0x00000000000005e0      0x194 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(port.o)
-                0x000000000000061a                pxPortInitialiseStack
-                0x000000000000063c                vPortSVCHandler
-                0x0000000000000664                vPortEndScheduler
-                0x0000000000000666                vPortEnterCritical
-                0x0000000000000684                vPortExitCritical
-                0x0000000000000698                xPortPendSVHandler
-                0x00000000000006e4                xPortSysTickHandler
-                0x0000000000000710                vPortSetupTimerInterrupt
-                0x0000000000000738                xPortStartScheduler
- .text          0x0000000000000774       0x50 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(basic_io.o)
-                0x0000000000000774                vPrintString
-                0x0000000000000798                vPrintStringAndNumber
- .text          0x00000000000007c4       0x14 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(consoleprint.o)
-                0x00000000000007c4                consoleprint
- .text          0x00000000000007d8     0x127c /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(queue.o)
-                0x0000000000000906                xQueueGenericReset
-                0x0000000000000978                xQueueGenericCreate
-                0x0000000000000a74                xQueueCreateCountingSemaphore
-                0x0000000000000a8a                xQueueGenericSend
-                0x0000000000000d40                xQueueCreateMutex
-                0x0000000000000d64                xQueueGenericSendFromISR
-                0x0000000000000ea8                MyWrapper
-                0x0000000000000fd0                xQueueGiveFromISR
-                0x0000000000000fda                xQueueReceive
-                0x0000000000001288                xQueueSemaphoreTake
-                0x0000000000001574                xQueuePeek
-                0x00000000000017e4                xQueueReceiveFromISR
-                0x00000000000018fc                xQueuePeekFromISR
-                0x000000000000192c                uxQueueMessagesWaiting
-                0x000000000000193e                uxQueueSpacesAvailable
-                0x0000000000001954                uxQueueMessagesWaitingFromISR
-                0x0000000000001958                vQueueDelete
-                0x0000000000001a2c                uxQueueGetQueueNumber
-                0x0000000000001a30                vQueueSetQueueNumber
-                0x0000000000001a34                ucQueueGetQueueType
-                0x0000000000001a3a                xQueueIsQueueEmptyFromISR
-                0x0000000000001a44                xQueueIsQueueFullFromISR
- .text          0x0000000000001a54     0x1ac0 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(tasks.o)
-                0x0000000000001b34                xTaskCreate
-                0x0000000000001d78                vTaskDelete
-                0x0000000000001ec4                eTaskGetState
-                0x0000000000001f34                uxTaskPriorityGet
-                0x0000000000001f54                uxTaskPriorityGetFromISR
-                0x0000000000001f7c                vTaskPrioritySet
-                0x00000000000020ac                vTaskResume
-                0x0000000000002180                xTaskResumeFromISR
-                0x0000000000002258                vTaskStartScheduler
-                0x00000000000022d4                vTaskEndScheduler
-                0x00000000000022f8                vTaskSuspendAll
-                0x000000000000230c                xTaskGetTickCount
-                0x0000000000002318                xTaskGetTickCountFromISR
-                0x0000000000002324                uxTaskGetNumberOfTasks
-                0x0000000000002330                pcTaskGetName
-                0x0000000000002344                xTaskIncrementTick
-                0x00000000000024a4                xTaskResumeAll
-                0x000000000000259c                vTaskDelayUntil
-                0x0000000000002648                vTaskDelay
-                0x00000000000026cc                vTaskSwitchContext
-                0x0000000000002788                vTaskSuspend
-                0x000000000000288c                vTaskPlaceOnEventList
-                0x00000000000028a8                vTaskPlaceOnUnorderedEventList
-                0x00000000000028cc                xTaskRemoveFromEventList
-                0x0000000000002954                vTaskRemoveFromUnorderedEventList
-                0x00000000000029c0                vTaskSetTimeOutState
-                0x00000000000029e0                vTaskInternalSetTimeOutState
-                0x00000000000029f4                xTaskCheckForTimeOut
-                0x0000000000002a4c                vTaskMissedYield
-                0x0000000000002a5c                uxTaskGetTaskNumber
-                0x0000000000002a66                vTaskSetTaskNumber
-                0x0000000000002a6c                vTaskGetInfo
-                0x0000000000002b54                uxTaskGetSystemState
-                0x0000000000002c00                xTaskGetCurrentTaskHandle
-                0x0000000000002c0c                xTaskGetSchedulerState
-                0x0000000000002c2c                xTaskPriorityInherit
-                0x0000000000002d4c                xTaskPriorityDisinherit
-                0x0000000000002e30                vTaskPriorityDisinheritAfterTimeout
-                0x0000000000002f24                uxTaskResetEventItemValue
-                0x0000000000002f3c                pvTaskIncrementMutexHeldCount
-                0x0000000000002f58                ulTaskNotifyTake
-                0x00000000000030a4                xTaskNotifyWait
-                0x00000000000031d0                xTaskGenericNotify
-                0x00000000000032f4                xTaskGenericNotifyFromISR
-                0x0000000000003410                vTaskNotifyGiveFromISR
-                0x00000000000034e4                xTaskNotifyStateClear
- .text          0x0000000000003514      0x2c4 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcKernelPort.o)
-                0x0000000000003514                __get_PRIMASK
-                0x000000000000351a                __set_PRIMASK
-                0x0000000000003520                prvTraceGetQueueNumber
-                0x0000000000003528                prvTraceGetQueueType
-                0x0000000000003530                prvTraceGetTaskNumberLow16
-                0x000000000000353a                prvTraceGetTaskNumberHigh16
-                0x0000000000003544                prvTraceSetTaskNumberLow16
-                0x000000000000355c                prvTraceSetTaskNumberHigh16
-                0x0000000000003574                prvTraceGetQueueNumberLow16
-                0x000000000000357e                prvTraceGetQueueNumberHigh16
-                0x0000000000003588                prvTraceSetQueueNumberLow16
-                0x00000000000035a0                prvTraceSetQueueNumberHigh16
-                0x00000000000035b8                vTraceSetQueueName
-                0x00000000000035cc                vTraceSetSemaphoreName
-                0x00000000000035e0                vTraceSetMutexName
-                0x00000000000035f4                prvTraceGetCurrentTaskHandle
-                0x00000000000035fc                vTraceEnable
-                0x0000000000003630                vTraceInitObjectPropertyTable
-                0x0000000000003700                vTraceInitObjectHandleStack
-                0x0000000000003764                pszTraceGetErrorNotEnoughHandles
-                0x00000000000037c8                prvTraceIsSchedulerSuspended
- .text          0x00000000000037d8     0x16bc /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
-                0x00000000000037fe                vTraceSetStopHook
-                0x0000000000003808                vTraceClear
-                0x0000000000003854                vTraceStop
-                0x0000000000003870                xTraceIsRecordingEnabled
-                0x0000000000003884                xTraceGetLastError
-                0x0000000000003890                vTraceClearError
-                0x00000000000038a4                xTraceGetTraceBuffer
-                0x00000000000038b0                uiTraceGetTraceBufferSize
-                0x00000000000038b6                prvTraceSetReadyEventsEnabled
-                0x00000000000038c0                vTraceSetFrequency
-                0x00000000000038cc                prvTraceError
-                0x0000000000003c14                xTraceRegisterString
-                0x0000000000003c8c                uiIndexOfObject
-                0x0000000000003cdc                prvMarkObjectAsUsed
-                0x0000000000003cfc                prvTraceStoreObjectNameOnCloseEvent
-                0x0000000000003d60                prvTraceStoreObjectPropertiesOnCloseEvent
-                0x0000000000003e00                prvTraceSetPriorityProperty
-                0x0000000000003e50                prvTraceGetPriorityProperty
-                0x0000000000003ea4                prvTraceSetObjectState
-                0x0000000000003ef4                prvTraceSetTaskInstanceFinished
-                0x0000000000003f2c                prvTraceGetObjectHandle
-                0x0000000000003fec                prvTraceFreeObjectHandle
-                0x0000000000004050                prvTraceSetObjectName
-                0x00000000000040c8                xTraceSetISRProperties
-                0x0000000000004134                vTraceSetFilterMask
-                0x0000000000004140                vTraceSetFilterGroup
-                0x000000000000414c                prvTraceInitCortexM
-                0x00000000000041ac                prvTraceInitTraceData
-                0x0000000000004324                prvTracePortGetTimeStamp
-                0x00000000000044cc                vTraceInstanceFinishedNext
-                0x00000000000044d6                vTraceInstanceFinishedNow
-                0x00000000000044e0                vTraceStoreISRBegin
-                0x0000000000004598                vTraceStoreISREnd
-                0x000000000000464c                vTraceVPrintF
-                0x0000000000004924                vTracePrintF
-                0x0000000000004940                vTracePrint
-                0x00000000000049a8                prvTraceStoreTaskReady
-                0x0000000000004a2c                prvTraceStoreLowPower
-                0x0000000000004aa0                vTraceStoreMemMangEvent
-                0x0000000000004b5c                prvTraceStoreKernelCall
-                0x0000000000004c04                prvTraceStoreKernelCallWithParam
-                0x0000000000004cbc                prvTraceStoreKernelCallWithNumericParamOnly
-                0x0000000000004d40                prvTraceStoreTaskswitch
-                0x0000000000004e00                uiTraceStart
-                0x0000000000004e8c                vTraceStart
- .text          0x0000000000004e94       0x8a /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(list.o)
-                0x0000000000004e94                vListInitialise
-                0x0000000000004eaa                vListInitialiseItem
-                0x0000000000004eb0                vListInsertEnd
-                0x0000000000004ec6                vListInsert
-                0x0000000000004efa                uxListRemove
- *fill*         0x0000000000004f1e        0x2 ff
- .text          0x0000000000004f20       0x40 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixunsdfsi.o)
-                0x0000000000004f20                __fixunsdfsi
-                0x0000000000004f20                __aeabi_d2uiz
- .text          0x0000000000004f60       0x30 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_aeabi_uldivmod.o)
-                0x0000000000004f60                __aeabi_uldivmod
- .text          0x0000000000004f90      0x2d0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
-                0x0000000000004f90                __udivmoddi4
- .text          0x0000000000005260        0x4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_dvmd_tls.o)
-                0x0000000000005260                __aeabi_ldiv0
-                0x0000000000005260                __aeabi_idiv0
- .text          0x0000000000005264       0xec /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
-                0x0000000000005264                memcpy
- .text.memset   0x0000000000005350       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
-                0x0000000000005350                memset
- .text.rand     0x00000000000053f0       0x3c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-rand.o)
-                0x00000000000053f0                rand
- .text.sprintf  0x000000000000542c       0x44 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-sprintf.o)
-                0x000000000000542c                sprintf
- .text.strcpy   0x0000000000005470       0xbc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strcpy.o)
-                0x0000000000005470                strcpy
- .text.strlen   0x000000000000552c       0x5c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strlen-stub.o)
-                0x000000000000552c                strlen
- .text.strncmp  0x0000000000005588       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strncmp.o)
-                0x0000000000005588                strncmp
+                0x000000000000034c      0x140 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/CMSISv1p30_LPC17xx/Debug/libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
+                0x000000000000034c                SystemInit
+ .text          0x000000000000048c      0x134 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(heap_2.o)
+                0x000000000000048c                pvPortMalloc
+                0x0000000000000564                vPortFree
+                0x00000000000005b0                xPortGetFreeHeapSize
+                0x00000000000005bc                vPortInitialiseBlocks
+ .text          0x00000000000005c0      0x194 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(port.o)
+                0x00000000000005fa                pxPortInitialiseStack
+                0x000000000000061c                vPortSVCHandler
+                0x0000000000000644                vPortEndScheduler
+                0x0000000000000646                vPortEnterCritical
+                0x0000000000000664                vPortExitCritical
+                0x0000000000000678                xPortPendSVHandler
+                0x00000000000006c4                xPortSysTickHandler
+                0x00000000000006f0                vPortSetupTimerInterrupt
+                0x0000000000000718                xPortStartScheduler
+ .text          0x0000000000000754       0x50 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(basic_io.o)
+                0x0000000000000754                vPrintString
+                0x0000000000000778                vPrintStringAndNumber
+ .text          0x00000000000007a4       0x14 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(consoleprint.o)
+                0x00000000000007a4                consoleprint
+ .text          0x00000000000007b8     0x127c /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(queue.o)
+                0x00000000000008e6                xQueueGenericReset
+                0x0000000000000958                xQueueGenericCreate
+                0x0000000000000a54                xQueueCreateCountingSemaphore
+                0x0000000000000a6a                xQueueGenericSend
+                0x0000000000000d20                xQueueCreateMutex
+                0x0000000000000d44                xQueueGenericSendFromISR
+                0x0000000000000e88                MyWrapper
+                0x0000000000000fb0                xQueueGiveFromISR
+                0x0000000000000fba                xQueueReceive
+                0x0000000000001268                xQueueSemaphoreTake
+                0x0000000000001554                xQueuePeek
+                0x00000000000017c4                xQueueReceiveFromISR
+                0x00000000000018dc                xQueuePeekFromISR
+                0x000000000000190c                uxQueueMessagesWaiting
+                0x000000000000191e                uxQueueSpacesAvailable
+                0x0000000000001934                uxQueueMessagesWaitingFromISR
+                0x0000000000001938                vQueueDelete
+                0x0000000000001a0c                uxQueueGetQueueNumber
+                0x0000000000001a10                vQueueSetQueueNumber
+                0x0000000000001a14                ucQueueGetQueueType
+                0x0000000000001a1a                xQueueIsQueueEmptyFromISR
+                0x0000000000001a24                xQueueIsQueueFullFromISR
+ .text          0x0000000000001a34     0x1ac0 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(tasks.o)
+                0x0000000000001b14                xTaskCreate
+                0x0000000000001d58                vTaskDelete
+                0x0000000000001ea4                eTaskGetState
+                0x0000000000001f14                uxTaskPriorityGet
+                0x0000000000001f34                uxTaskPriorityGetFromISR
+                0x0000000000001f5c                vTaskPrioritySet
+                0x000000000000208c                vTaskResume
+                0x0000000000002160                xTaskResumeFromISR
+                0x0000000000002238                vTaskStartScheduler
+                0x00000000000022b4                vTaskEndScheduler
+                0x00000000000022d8                vTaskSuspendAll
+                0x00000000000022ec                xTaskGetTickCount
+                0x00000000000022f8                xTaskGetTickCountFromISR
+                0x0000000000002304                uxTaskGetNumberOfTasks
+                0x0000000000002310                pcTaskGetName
+                0x0000000000002324                xTaskIncrementTick
+                0x0000000000002484                xTaskResumeAll
+                0x000000000000257c                vTaskDelayUntil
+                0x0000000000002628                vTaskDelay
+                0x00000000000026ac                vTaskSwitchContext
+                0x0000000000002768                vTaskSuspend
+                0x000000000000286c                vTaskPlaceOnEventList
+                0x0000000000002888                vTaskPlaceOnUnorderedEventList
+                0x00000000000028ac                xTaskRemoveFromEventList
+                0x0000000000002934                vTaskRemoveFromUnorderedEventList
+                0x00000000000029a0                vTaskSetTimeOutState
+                0x00000000000029c0                vTaskInternalSetTimeOutState
+                0x00000000000029d4                xTaskCheckForTimeOut
+                0x0000000000002a2c                vTaskMissedYield
+                0x0000000000002a3c                uxTaskGetTaskNumber
+                0x0000000000002a46                vTaskSetTaskNumber
+                0x0000000000002a4c                vTaskGetInfo
+                0x0000000000002b34                uxTaskGetSystemState
+                0x0000000000002be0                xTaskGetCurrentTaskHandle
+                0x0000000000002bec                xTaskGetSchedulerState
+                0x0000000000002c0c                xTaskPriorityInherit
+                0x0000000000002d2c                xTaskPriorityDisinherit
+                0x0000000000002e10                vTaskPriorityDisinheritAfterTimeout
+                0x0000000000002f04                uxTaskResetEventItemValue
+                0x0000000000002f1c                pvTaskIncrementMutexHeldCount
+                0x0000000000002f38                ulTaskNotifyTake
+                0x0000000000003084                xTaskNotifyWait
+                0x00000000000031b0                xTaskGenericNotify
+                0x00000000000032d4                xTaskGenericNotifyFromISR
+                0x00000000000033f0                vTaskNotifyGiveFromISR
+                0x00000000000034c4                xTaskNotifyStateClear
+ .text          0x00000000000034f4      0x2c4 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcKernelPort.o)
+                0x00000000000034f4                __get_PRIMASK
+                0x00000000000034fa                __set_PRIMASK
+                0x0000000000003500                prvTraceGetQueueNumber
+                0x0000000000003508                prvTraceGetQueueType
+                0x0000000000003510                prvTraceGetTaskNumberLow16
+                0x000000000000351a                prvTraceGetTaskNumberHigh16
+                0x0000000000003524                prvTraceSetTaskNumberLow16
+                0x000000000000353c                prvTraceSetTaskNumberHigh16
+                0x0000000000003554                prvTraceGetQueueNumberLow16
+                0x000000000000355e                prvTraceGetQueueNumberHigh16
+                0x0000000000003568                prvTraceSetQueueNumberLow16
+                0x0000000000003580                prvTraceSetQueueNumberHigh16
+                0x0000000000003598                vTraceSetQueueName
+                0x00000000000035ac                vTraceSetSemaphoreName
+                0x00000000000035c0                vTraceSetMutexName
+                0x00000000000035d4                prvTraceGetCurrentTaskHandle
+                0x00000000000035dc                vTraceEnable
+                0x0000000000003610                vTraceInitObjectPropertyTable
+                0x00000000000036e0                vTraceInitObjectHandleStack
+                0x0000000000003744                pszTraceGetErrorNotEnoughHandles
+                0x00000000000037a8                prvTraceIsSchedulerSuspended
+ .text          0x00000000000037b8     0x16bc /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
+                0x00000000000037de                vTraceSetStopHook
+                0x00000000000037e8                vTraceClear
+                0x0000000000003834                vTraceStop
+                0x0000000000003850                xTraceIsRecordingEnabled
+                0x0000000000003864                xTraceGetLastError
+                0x0000000000003870                vTraceClearError
+                0x0000000000003884                xTraceGetTraceBuffer
+                0x0000000000003890                uiTraceGetTraceBufferSize
+                0x0000000000003896                prvTraceSetReadyEventsEnabled
+                0x00000000000038a0                vTraceSetFrequency
+                0x00000000000038ac                prvTraceError
+                0x0000000000003bf4                xTraceRegisterString
+                0x0000000000003c6c                uiIndexOfObject
+                0x0000000000003cbc                prvMarkObjectAsUsed
+                0x0000000000003cdc                prvTraceStoreObjectNameOnCloseEvent
+                0x0000000000003d40                prvTraceStoreObjectPropertiesOnCloseEvent
+                0x0000000000003de0                prvTraceSetPriorityProperty
+                0x0000000000003e30                prvTraceGetPriorityProperty
+                0x0000000000003e84                prvTraceSetObjectState
+                0x0000000000003ed4                prvTraceSetTaskInstanceFinished
+                0x0000000000003f0c                prvTraceGetObjectHandle
+                0x0000000000003fcc                prvTraceFreeObjectHandle
+                0x0000000000004030                prvTraceSetObjectName
+                0x00000000000040a8                xTraceSetISRProperties
+                0x0000000000004114                vTraceSetFilterMask
+                0x0000000000004120                vTraceSetFilterGroup
+                0x000000000000412c                prvTraceInitCortexM
+                0x000000000000418c                prvTraceInitTraceData
+                0x0000000000004304                prvTracePortGetTimeStamp
+                0x00000000000044ac                vTraceInstanceFinishedNext
+                0x00000000000044b6                vTraceInstanceFinishedNow
+                0x00000000000044c0                vTraceStoreISRBegin
+                0x0000000000004578                vTraceStoreISREnd
+                0x000000000000462c                vTraceVPrintF
+                0x0000000000004904                vTracePrintF
+                0x0000000000004920                vTracePrint
+                0x0000000000004988                prvTraceStoreTaskReady
+                0x0000000000004a0c                prvTraceStoreLowPower
+                0x0000000000004a80                vTraceStoreMemMangEvent
+                0x0000000000004b3c                prvTraceStoreKernelCall
+                0x0000000000004be4                prvTraceStoreKernelCallWithParam
+                0x0000000000004c9c                prvTraceStoreKernelCallWithNumericParamOnly
+                0x0000000000004d20                prvTraceStoreTaskswitch
+                0x0000000000004de0                uiTraceStart
+                0x0000000000004e6c                vTraceStart
+ .text          0x0000000000004e74       0x8a /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(list.o)
+                0x0000000000004e74                vListInitialise
+                0x0000000000004e8a                vListInitialiseItem
+                0x0000000000004e90                vListInsertEnd
+                0x0000000000004ea6                vListInsert
+                0x0000000000004eda                uxListRemove
+ *fill*         0x0000000000004efe        0x2 ff
+ .text          0x0000000000004f00       0x40 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixunsdfsi.o)
+                0x0000000000004f00                __fixunsdfsi
+                0x0000000000004f00                __aeabi_d2uiz
+ .text          0x0000000000004f40       0x30 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_aeabi_uldivmod.o)
+                0x0000000000004f40                __aeabi_uldivmod
+ .text          0x0000000000004f70      0x2d0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x0000000000004f70                __udivmoddi4
+ .text          0x0000000000005240        0x4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x0000000000005240                __aeabi_ldiv0
+                0x0000000000005240                __aeabi_idiv0
+ .text          0x0000000000005244       0xec /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memcpy.o)
+                0x0000000000005244                memcpy
+ .text.memset   0x0000000000005330       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memset.o)
+                0x0000000000005330                memset
+ .text.rand     0x00000000000053d0       0x3c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-rand.o)
+                0x00000000000053d0                rand
+ .text.sprintf  0x000000000000540c       0x44 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-sprintf.o)
+                0x000000000000540c                sprintf
+ .text.strcpy   0x0000000000005450       0xbc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strcpy.o)
+                0x0000000000005450                strcpy
+ .text.strlen   0x000000000000550c       0x5c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x000000000000550c                strlen
+ .text.strncmp  0x0000000000005568       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strncmp.o)
+                0x0000000000005568                strncmp
  .text._svfprintf_r
-                0x0000000000005628     0x1a28 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
-                0x0000000000005628                _svfprintf_r
- .text.quorem   0x0000000000007050      0x12c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-dtoa.o)
- *fill*         0x000000000000717c        0x4 ff
- .text._dtoa_r  0x0000000000007180      0xe6c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-dtoa.o)
-                0x0000000000007180                _dtoa_r
+                0x0000000000005608     0x1a28 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
+                0x0000000000005608                _svfprintf_r
+ .text.quorem   0x0000000000007030      0x12c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-dtoa.o)
+ *fill*         0x000000000000715c        0x4 ff
+ .text._dtoa_r  0x0000000000007160      0xe6c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-dtoa.o)
+                0x0000000000007160                _dtoa_r
  .text._malloc_trim_r
-                0x0000000000007fec       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-freer.o)
-                0x0000000000007fec                _malloc_trim_r
- .text._free_r  0x000000000000808c      0x1f4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-freer.o)
-                0x000000000000808c                _free_r
+                0x0000000000007fcc       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-freer.o)
+                0x0000000000007fcc                _malloc_trim_r
+ .text._free_r  0x000000000000806c      0x1f4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-freer.o)
+                0x000000000000806c                _free_r
  .text._localeconv_r
-                0x0000000000008280        0x8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-localeconv.o)
-                0x0000000000008280                _localeconv_r
+                0x0000000000008260        0x8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-localeconv.o)
+                0x0000000000008260                _localeconv_r
  .text._malloc_r
-                0x0000000000008288      0x558 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mallocr.o)
-                0x0000000000008288                _malloc_r
- .text.memchr   0x00000000000087e0       0x8c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memchr-stub.o)
-                0x00000000000087e0                memchr
+                0x0000000000008268      0x558 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mallocr.o)
+                0x0000000000008268                _malloc_r
+ .text.memchr   0x00000000000087c0       0x8c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memchr-stub.o)
+                0x00000000000087c0                memchr
  .text.__malloc_lock
-                0x000000000000886c        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mlock.o)
-                0x000000000000886c                __malloc_lock
+                0x000000000000884c        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mlock.o)
+                0x000000000000884c                __malloc_lock
  .text.__malloc_unlock
-                0x0000000000008878        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mlock.o)
-                0x0000000000008878                __malloc_unlock
- .text._Balloc  0x0000000000008884       0x4c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008884                _Balloc
- .text._Bfree   0x00000000000088d0       0x14 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x00000000000088d0                _Bfree
+                0x0000000000008858        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mlock.o)
+                0x0000000000008858                __malloc_unlock
+ .text._Balloc  0x0000000000008864       0x4c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008864                _Balloc
+ .text._Bfree   0x00000000000088b0       0x14 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x00000000000088b0                _Bfree
  .text.__multadd
-                0x00000000000088e4       0x8c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x00000000000088e4                __multadd
+                0x00000000000088c4       0x8c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x00000000000088c4                __multadd
  .text.__hi0bits
-                0x0000000000008970       0x40 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008970                __hi0bits
+                0x0000000000008950       0x40 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008950                __hi0bits
  .text.__lo0bits
-                0x00000000000089b0       0x60 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x00000000000089b0                __lo0bits
- .text.__i2b    0x0000000000008a10       0x14 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008a10                __i2b
+                0x0000000000008990       0x60 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008990                __lo0bits
+ .text.__i2b    0x00000000000089f0       0x14 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x00000000000089f0                __i2b
  .text.__multiply
-                0x0000000000008a24      0x130 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008a24                __multiply
+                0x0000000000008a04      0x130 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008a04                __multiply
  .text.__pow5mult
-                0x0000000000008b54       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008b54                __pow5mult
+                0x0000000000008b34       0xa0 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008b34                __pow5mult
  .text.__lshift
-                0x0000000000008bf4       0xb4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008bf4                __lshift
- .text.__mcmp   0x0000000000008ca8       0x38 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008ca8                __mcmp
- .text.__mdiff  0x0000000000008ce0      0x100 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008ce0                __mdiff
- .text.__d2b    0x0000000000008de0       0xac /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x0000000000008de0                __d2b
- .text.frexp    0x0000000000008e8c       0x70 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-s_frexp.o)
-                0x0000000000008e8c                frexp
- .text._sbrk_r  0x0000000000008efc       0x24 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-sbrkr.o)
-                0x0000000000008efc                _sbrk_r
- .text.strncpy  0x0000000000008f20       0x74 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strncpy.o)
-                0x0000000000008f20                strncpy
+                0x0000000000008bd4       0xb4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008bd4                __lshift
+ .text.__mcmp   0x0000000000008c88       0x38 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008c88                __mcmp
+ .text.__mdiff  0x0000000000008cc0      0x100 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008cc0                __mdiff
+ .text.__d2b    0x0000000000008dc0       0xac /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x0000000000008dc0                __d2b
+ .text.frexp    0x0000000000008e6c       0x70 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-s_frexp.o)
+                0x0000000000008e6c                frexp
+ .text._sbrk_r  0x0000000000008edc       0x24 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-sbrkr.o)
+                0x0000000000008edc                _sbrk_r
+ .text.strncpy  0x0000000000008f00       0x74 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-strncpy.o)
+                0x0000000000008f00                strncpy
  .text.__ssprint_r
-                0x0000000000008f94       0xf8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfiprintf.o)
-                0x0000000000008f94                __ssprint_r
+                0x0000000000008f74       0xf8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfiprintf.o)
+                0x0000000000008f74                __ssprint_r
  .text._calloc_r
-                0x000000000000908c       0x60 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-callocr.o)
-                0x000000000000908c                _calloc_r
+                0x000000000000906c       0x60 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-callocr.o)
+                0x000000000000906c                _calloc_r
  .text.__retarget_lock_acquire_recursive
-                0x00000000000090ec        0x4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-lock.o)
-                0x00000000000090ec                __retarget_lock_acquire_recursive
+                0x00000000000090cc        0x4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-lock.o)
+                0x00000000000090cc                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x00000000000090f0        0x4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-lock.o)
-                0x00000000000090f0                __retarget_lock_release_recursive
+                0x00000000000090d0        0x4 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-lock.o)
+                0x00000000000090d0                __retarget_lock_release_recursive
  .text.__ascii_mbtowc
-                0x00000000000090f4       0x2c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mbtowc_r.o)
-                0x00000000000090f4                __ascii_mbtowc
- .text.memmove  0x0000000000009120       0xcc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memmove.o)
-                0x0000000000009120                memmove
+                0x00000000000090d4       0x2c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mbtowc_r.o)
+                0x00000000000090d4                __ascii_mbtowc
+ .text.memmove  0x0000000000009100       0xcc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-memmove.o)
+                0x0000000000009100                memmove
  .text._realloc_r
-                0x00000000000091ec      0x37c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-reallocr.o)
-                0x00000000000091ec                _realloc_r
+                0x00000000000091cc      0x37c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-reallocr.o)
+                0x00000000000091cc                _realloc_r
  .text.__ascii_wctomb
-                0x0000000000009568       0x1c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-wctomb_r.o)
-                0x0000000000009568                __ascii_wctomb
- .text._sbrk    0x0000000000009584       0x3c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
-                0x0000000000009584                _sbrk
+                0x0000000000009548       0x1c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-wctomb_r.o)
+                0x0000000000009548                __ascii_wctomb
+ .text._sbrk    0x0000000000009564       0x3c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(_cr_sbrk.o)
+                0x0000000000009564                _sbrk
  .text.checkerror
-                0x00000000000095c0       0x20 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000000095a0       0x20 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(syscalls.o)
  .text._swiwrite
-                0x00000000000095e0       0x20 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(syscalls.o)
-                0x00000000000095e0                _swiwrite
+                0x00000000000095c0       0x20 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(syscalls.o)
+                0x00000000000095c0                _swiwrite
  .text.__check_heap_overflow
-                0x0000000000009600       0x18 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
-                0x0000000000009600                __check_heap_overflow
- .text          0x0000000000009618      0x378 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubdf3.o)
-                0x0000000000009618                __aeabi_drsub
-                0x0000000000009620                __aeabi_dsub
-                0x0000000000009620                __subdf3
-                0x0000000000009624                __adddf3
-                0x0000000000009624                __aeabi_dadd
-                0x000000000000989c                __aeabi_ui2d
-                0x000000000000989c                __floatunsidf
-                0x00000000000098bc                __floatsidf
-                0x00000000000098bc                __aeabi_i2d
-                0x00000000000098e0                __extendsfdf2
-                0x00000000000098e0                __aeabi_f2d
-                0x0000000000009924                __aeabi_ul2d
-                0x0000000000009924                __floatundidf
-                0x0000000000009934                __floatdidf
-                0x0000000000009934                __aeabi_l2d
- .text          0x0000000000009990      0x424 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivdf3.o)
-                0x0000000000009990                __aeabi_dmul
-                0x0000000000009990                __muldf3
-                0x0000000000009be4                __aeabi_ddiv
-                0x0000000000009be4                __divdf3
- .text          0x0000000000009db4      0x110 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_cmpdf2.o)
-                0x0000000000009db4                __gtdf2
-                0x0000000000009db4                __gedf2
-                0x0000000000009dbc                __ltdf2
-                0x0000000000009dbc                __ledf2
-                0x0000000000009dc4                __cmpdf2
-                0x0000000000009dc4                __eqdf2
-                0x0000000000009dc4                __nedf2
-                0x0000000000009e40                __aeabi_cdrcmple
-                0x0000000000009e50                __aeabi_cdcmple
-                0x0000000000009e50                __aeabi_cdcmpeq
-                0x0000000000009e60                __aeabi_dcmpeq
-                0x0000000000009e74                __aeabi_dcmplt
-                0x0000000000009e88                __aeabi_dcmple
-                0x0000000000009e9c                __aeabi_dcmpge
-                0x0000000000009eb0                __aeabi_dcmpgt
- .text          0x0000000000009ec4       0x2c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_unorddf2.o)
-                0x0000000000009ec4                __aeabi_dcmpun
-                0x0000000000009ec4                __unorddf2
- .text          0x0000000000009ef0       0x50 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixdfsi.o)
-                0x0000000000009ef0                __fixdfsi
-                0x0000000000009ef0                __aeabi_d2iz
- .text.__errno  0x0000000000009f40        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-errno.o)
-                0x0000000000009f40                __errno
+                0x00000000000095e0       0x18 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libcr_newlib_semihost.a(_cr_check_heap.o)
+                0x00000000000095e0                __check_heap_overflow
+ .text          0x00000000000095f8      0x378 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubdf3.o)
+                0x00000000000095f8                __aeabi_drsub
+                0x0000000000009600                __aeabi_dsub
+                0x0000000000009600                __subdf3
+                0x0000000000009604                __adddf3
+                0x0000000000009604                __aeabi_dadd
+                0x000000000000987c                __aeabi_ui2d
+                0x000000000000987c                __floatunsidf
+                0x000000000000989c                __floatsidf
+                0x000000000000989c                __aeabi_i2d
+                0x00000000000098c0                __extendsfdf2
+                0x00000000000098c0                __aeabi_f2d
+                0x0000000000009904                __aeabi_ul2d
+                0x0000000000009904                __floatundidf
+                0x0000000000009914                __floatdidf
+                0x0000000000009914                __aeabi_l2d
+ .text          0x0000000000009970      0x424 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivdf3.o)
+                0x0000000000009970                __aeabi_dmul
+                0x0000000000009970                __muldf3
+                0x0000000000009bc4                __aeabi_ddiv
+                0x0000000000009bc4                __divdf3
+ .text          0x0000000000009d94      0x110 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_cmpdf2.o)
+                0x0000000000009d94                __gtdf2
+                0x0000000000009d94                __gedf2
+                0x0000000000009d9c                __ltdf2
+                0x0000000000009d9c                __ledf2
+                0x0000000000009da4                __cmpdf2
+                0x0000000000009da4                __eqdf2
+                0x0000000000009da4                __nedf2
+                0x0000000000009e20                __aeabi_cdrcmple
+                0x0000000000009e30                __aeabi_cdcmple
+                0x0000000000009e30                __aeabi_cdcmpeq
+                0x0000000000009e40                __aeabi_dcmpeq
+                0x0000000000009e54                __aeabi_dcmplt
+                0x0000000000009e68                __aeabi_dcmple
+                0x0000000000009e7c                __aeabi_dcmpge
+                0x0000000000009e90                __aeabi_dcmpgt
+ .text          0x0000000000009ea4       0x2c /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_unorddf2.o)
+                0x0000000000009ea4                __aeabi_dcmpun
+                0x0000000000009ea4                __unorddf2
+ .text          0x0000000000009ed0       0x50 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixdfsi.o)
+                0x0000000000009ed0                __fixdfsi
+                0x0000000000009ed0                __aeabi_d2iz
+ .text.__errno  0x0000000000009f20        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-errno.o)
+                0x0000000000009f20                __errno
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.str1.4
-                0x0000000000009f4c       0x37 ./main.o
- *fill*         0x0000000000009f83        0x1 ff
+                0x0000000000009f2c       0x37 ./main.o
+ *fill*         0x0000000000009f63        0x1 ff
  .rodata.str1.4
-                0x0000000000009f84        0x8 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(basic_io.o)
+                0x0000000000009f64        0x8 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(basic_io.o)
  .rodata.str1.4
-                0x0000000000009f8c        0x5 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(tasks.o)
- *fill*         0x0000000000009f91        0x3 ff
+                0x0000000000009f6c        0x5 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(tasks.o)
+ *fill*         0x0000000000009f71        0x3 ff
  .rodata.str1.4
-                0x0000000000009f94      0x372 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcKernelPort.o)
- *fill*         0x000000000000a306        0x2 ff
+                0x0000000000009f74      0x372 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcKernelPort.o)
+ *fill*         0x000000000000a2e6        0x2 ff
  .rodata.str1.4
-                0x000000000000a308      0xf16 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
- *fill*         0x000000000000b21e        0x2 ff
+                0x000000000000a2e8      0xf16 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
+ *fill*         0x000000000000b1fe        0x2 ff
  .rodata._svfprintf_r.str1.4
-                0x000000000000b220       0x42 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
- *fill*         0x000000000000b262        0x2 ff
+                0x000000000000b200       0x42 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
+ *fill*         0x000000000000b242        0x2 ff
  .rodata.blanks.7355
-                0x000000000000b264       0x10 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
+                0x000000000000b244       0x10 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
  .rodata.zeroes.7356
-                0x000000000000b274       0x10 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
+                0x000000000000b254       0x10 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-svfprintf.o)
  .rodata._dtoa_r.str1.4
-                0x000000000000b284        0xd /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-dtoa.o)
+                0x000000000000b264        0xd /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-dtoa.o)
                                          0x12 (size before relaxing)
- *fill*         0x000000000000b291        0x7 ff
+ *fill*         0x000000000000b271        0x7 ff
  .rodata.__mprec_bigtens
-                0x000000000000b298       0x28 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x000000000000b298                __mprec_bigtens
+                0x000000000000b278       0x28 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x000000000000b278                __mprec_bigtens
  .rodata.__mprec_tens
-                0x000000000000b2c0       0xc8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
-                0x000000000000b2c0                __mprec_tens
+                0x000000000000b2a0       0xc8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x000000000000b2a0                __mprec_tens
  .rodata.p05.6125
-                0x000000000000b388        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
+                0x000000000000b368        0xc /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-mprec.o)
  .rodata._setlocale_r.str1.4
-                0x000000000000b394        0x6 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-locale.o)
+                0x000000000000b374        0x6 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-locale.o)
                                           0xd (size before relaxing)
  .rodata.str1.4
-                0x000000000000b39a        0x8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-locale.o)
+                0x000000000000b37a        0x8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-locale.o)
                                           0x2 (size before relaxing)
- *fill*         0x000000000000b39a        0x2 ff
+ *fill*         0x000000000000b37a        0x2 ff
  .rodata._ctype_
-                0x000000000000b39c      0x101 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-ctype_.o)
-                0x000000000000b39c                _ctype_
-                0x000000000000b4a0                . = ALIGN (0x4)
- *fill*         0x000000000000b49d        0x3 ff
+                0x000000000000b37c      0x101 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc.a(lib_a-ctype_.o)
+                0x000000000000b37c                _ctype_
+                0x000000000000b480                . = ALIGN (0x4)
+ *fill*         0x000000000000b47d        0x3 ff
 
-.glue_7         0x000000000000b4a0        0x0
- .glue_7        0x000000000000b4a0        0x0 linker stubs
+.glue_7         0x000000000000b480        0x0
+ .glue_7        0x000000000000b480        0x0 linker stubs
 
-.glue_7t        0x000000000000b4a0        0x0
- .glue_7t       0x000000000000b4a0        0x0 linker stubs
+.glue_7t        0x000000000000b480        0x0
+ .glue_7t       0x000000000000b480        0x0 linker stubs
 
-.vfp11_veneer   0x000000000000b4a0        0x0
- .vfp11_veneer  0x000000000000b4a0        0x0 linker stubs
+.vfp11_veneer   0x000000000000b480        0x0
+ .vfp11_veneer  0x000000000000b480        0x0 linker stubs
 
-.v4_bx          0x000000000000b4a0        0x0
- .v4_bx         0x000000000000b4a0        0x0 linker stubs
+.v4_bx          0x000000000000b480        0x0
+ .v4_bx         0x000000000000b480        0x0 linker stubs
 
-.iplt           0x000000000000b4a0        0x0
- .iplt          0x000000000000b4a0        0x0 ./cr_startup_lpc17.o
+.iplt           0x000000000000b480        0x0
+ .iplt          0x000000000000b480        0x0 ./cr_startup_lpc17.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM.exidx      0x000000000000b4a0        0x8
-                0x000000000000b4a0                __exidx_start = .
+.ARM.exidx      0x000000000000b480        0x8
+                0x000000000000b480                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000000000b4a0        0x8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
-                0x000000000000b4a8                __exidx_end = .
-                0x000000000000b4a8                _etext = .
+ .ARM.exidx     0x000000000000b480        0x8 /usr/local/mcuxpressoide-11.1.1_3241/ide/plugins/com.nxp.mcuxpresso.tools.linux_11.1.0.202001081728/tools/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x000000000000b488                __exidx_end = .
+                0x000000000000b488                _etext = .
 
-.rel.dyn        0x000000000000b4a8        0x0
- .rel.iplt      0x000000000000b4a8        0x0 ./cr_startup_lpc17.o
+.rel.dyn        0x000000000000b488        0x0
+ .rel.iplt      0x000000000000b488        0x0 ./cr_startup_lpc17.o
 
-.data_RAM2      0x000000002007c000        0x0 load address 0x000000000000b4a8
+.data_RAM2      0x000000002007c000        0x0 load address 0x000000000000b488
  FILL mask 0xff
                 [!provide]                        PROVIDE (__start_data_RAM2 = .)
                 [!provide]                        PROVIDE (__start_data_RamAHB32 = .)
@@ -1721,7 +1720,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000      0x9c4 load address 0x000000000000b4a8
+.data           0x0000000010000000      0x9c4 load address 0x000000000000b488
  FILL mask 0xff
                 0x0000000010000000                _data = .
                 [!provide]                        PROVIDE (__start_data_RAM = .)
@@ -1763,7 +1762,7 @@ END GROUP
                 [!provide]                        PROVIDE (__end_data_RAM = .)
                 [!provide]                        PROVIDE (__end_data_RamLoc32 = .)
 
-.igot.plt       0x00000000100009c4        0x0 load address 0x000000000000be6c
+.igot.plt       0x00000000100009c4        0x0 load address 0x000000000000be4c
  .igot.plt      0x00000000100009c4        0x0 ./cr_startup_lpc17.o
 
 .bss_RAM2       0x000000002007c000        0x0
@@ -1864,8 +1863,8 @@ END GROUP
                 0x0000000010008000                PROVIDE (_vStackTop = DEFINED (__user_stack_top)?__user_stack_top:(__top_RamLoc32 - 0x0))
                 [!provide]                        PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (ResetISR + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
                 0x0000000000000000                _image_start = LOADADDR (.text)
-                0x000000000000be6c                _image_end = (LOADADDR (.data) + SIZEOF (.data))
-                0x000000000000be6c                _image_size = (_image_end - _image_start)
+                0x000000000000be4c                _image_end = (LOADADDR (.data) + SIZEOF (.data))
+                0x000000000000be4c                _image_size = (_image_end - _image_start)
 OUTPUT(Example01.axf elf32-littlearm)
 
 .debug_info     0x0000000000000000    0x12b1b
@@ -2029,19 +2028,19 @@ OUTPUT(Example01.axf elf32-littlearm)
  .debug_macro   0x0000000000007422       0x10 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
  .debug_macro   0x0000000000007432      0x1ff /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(list.o)
 
-.debug_line     0x0000000000000000     0x9c65
+.debug_line     0x0000000000000000     0x9c69
  .debug_line    0x0000000000000000      0x486 ./cr_startup_lpc17.o
- .debug_line    0x0000000000000486      0x918 ./main.o
- .debug_line    0x0000000000000d9e      0x552 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/CMSISv1p30_LPC17xx/Debug/libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
- .debug_line    0x00000000000012f0      0x7c6 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(heap_2.o)
- .debug_line    0x0000000000001ab6      0x6b5 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(port.o)
- .debug_line    0x000000000000216b      0x665 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(basic_io.o)
- .debug_line    0x00000000000027d0      0x432 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(consoleprint.o)
- .debug_line    0x0000000000002c02     0x1793 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(queue.o)
- .debug_line    0x0000000000004395     0x2534 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(tasks.o)
- .debug_line    0x00000000000068c9      0x949 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcKernelPort.o)
- .debug_line    0x0000000000007212     0x236a /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
- .debug_line    0x000000000000957c      0x6e9 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(list.o)
+ .debug_line    0x0000000000000486      0x91c ./main.o
+ .debug_line    0x0000000000000da2      0x552 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/CMSISv1p30_LPC17xx/Debug/libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
+ .debug_line    0x00000000000012f4      0x7c6 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(heap_2.o)
+ .debug_line    0x0000000000001aba      0x6b5 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(port.o)
+ .debug_line    0x000000000000216f      0x665 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(basic_io.o)
+ .debug_line    0x00000000000027d4      0x432 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(consoleprint.o)
+ .debug_line    0x0000000000002c06     0x1793 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(queue.o)
+ .debug_line    0x0000000000004399     0x2534 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(tasks.o)
+ .debug_line    0x00000000000068cd      0x949 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcKernelPort.o)
+ .debug_line    0x0000000000007216     0x236a /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(trcSnapshotRecorder.o)
+ .debug_line    0x0000000000009580      0x6e9 /home/sampaxx/Escritorio/Sistemas Operativos II/TP4_RTOS/FreeRTOS_Library/Debug/libFreeRTOS_Library.a(list.o)
 
 .debug_str      0x0000000000000000    0x1ef3e
  .debug_str     0x0000000000000000     0x3cbe ./cr_startup_lpc17.o

@@ -129,7 +129,8 @@ xLastWakeTime = xTaskGetTickCount();
 		sprintf(salidaConsola, "[%03u %s]\n", usSensorValue, "deg.C"); //%05u indica que se imprimen 5 digitos de u
  		cpElem = salidaConsola;
 
- 		for(ul = 0; ul < 165000; ul++){
+ 	    //overhead - retraso intencional
+ 		for(ul = 0; ul < RETRASO_SENSOR; ul++){
  		}
 
  		for(ul = 0; ul < 12; ul++){
@@ -166,8 +167,8 @@ void vTask_entrada_teclado( void *pvParameters )
 
 				*(salidaConsola + ul) = (char) ('a' + (rand() % 25));
 
-				//delay intencional para propositos de analisis
-				for(uk = 0; uk < 15000; uk++){
+				//overhead - delay intencional para propositos de analisis
+				for(uk = 0; uk < RETRASO_TECLADO; uk++){
 				}
 			}
 
@@ -203,6 +204,7 @@ void vTask_envio_de_dato( void *pvParameters )
 		data[1] = '\0';
 		vPrintString(data);
 
+		//overhead - delay de UART
 		for(unsigned long uk = 0; uk < RETRASO_UART; uk++){
 		}
 	}
